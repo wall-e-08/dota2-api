@@ -2,9 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(PROJECT_ROOT, "packages"))
 
+from core.settings import BASE_DIR
+sys.path.append(os.path.join(BASE_DIR, "packages"))
 
 
 def main():
