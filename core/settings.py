@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'steam_api',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-try: from .local_settings import *;
-except ImportError: pass;
+# dota2 api project settings
+STEAM_WEB_API_URL = 'http://api.steampowered.com/{method_group}/{method_name}/v1/'
 
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+# todo: remove all prints, add logger
